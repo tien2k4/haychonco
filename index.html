@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="google-site-verification" content="i0u9bjrEcH6KrjKBJL03GEYwyc7j6dncp02mzwtf7dY" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./test.css">
+    <link rel="stylesheet" href="://cdnjhttpss.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Tien2k4</title>
+</head>
+<body>
+    <div class="img" id="1">
+        <img id="img1" src="./img/0.jpg">
+    </div>
+    <div class="content" id="2">
+        <p>Bạn có muốn đi chơi không -.-</p>
+    </div>
+    <div class="list" id="3">
+        <ul>
+            <li class="li1"><button type="button" class="b1" id="4" onclick="Ham1()">Có</button></li>
+            <li class="li1"><button type="button" class="b2" id="5" onclick="Thaydoi()">Không</button></li>
+        </ul>
+        <div class="yay" id="6">
+            <p>Thứ 6 tuần này nhé =))))) <br>
+            Hoặc khi nào bạn rảnh :3</p>
+        </div>
+    </div>
+</body>
+<script>
+    function centerElements() 
+    {
+        const screenWidth = screen.availWidth;
+        const containerWidth = document.querySelector('.container').offsetWidth;
+        const leftPosition = (screenWidth - containerWidth) / 2;
+        document.querySelector('.container').style.left = leftPosition + 'px';
+    }
+    window.addEventListener('load', centerElements);
+    window.addEventListener('resize', centerElements);
+    let click=0;
+    function HoanDoi() 
+    {
+       document.getElementById('4').onclick=Thaydoi;
+       document.getElementById('5').onclick=Ham1;
+    }
+    function Ham1()
+    {
+        let img=document.getElementById('img1');
+        img.src="./img/5.jpg";
+        document.getElementById('4').style.display = "none";
+        document.getElementById('5').style.display = "none";
+        document.getElementById('2').style.display="none";
+        document.getElementById('6').style.display = "block";
+    }
+    function Thaydoi()
+    {
+        click++;
+        let img=document.getElementById('img1');
+        let button1=document.getElementById('4');
+        let button2=document.getElementById('5');
+        if(click==1)
+        {
+            img.src="./img/2.jpg";
+            button2.innerHTML="Có";
+            button1.innerHTML="Không";
+            button2.style.backgroundColor="rgb(36, 169, 213)";
+            button1.style.backgroundColor="rgb(11, 137, 49)";
+            document.getElementById('4').onclick=Thaydoi;
+            document.getElementById('5').onclick=Ham1;
+        }
+        if(click==2)
+        {
+            img.src="./img/3.jpg";
+            button1.innerHTML="Có";
+            button2.innerHTML="Không";
+            button1.style.backgroundColor="rgb(36, 169, 213)";
+            button2.style.backgroundColor="rgb(11, 137, 49)";
+            document.getElementById('5').onclick=Thaydoi;
+            document.getElementById('4').onclick=Ham1;
+        }
+        if(click==3)
+        {
+            img.src="./img/4.jpg";
+            button2.innerHTML="Có";
+            button1.innerHTML="Không";
+            button2.style.backgroundColor="rgb(36, 169, 213)";
+            button1.style.backgroundColor="rgb(11, 137, 49)";
+            document.getElementById('4').onclick=Thaydoi;
+            document.getElementById('5').onclick=Ham1;
+        }
+        if(click==4)
+        {
+            img.src="./img/7.jpg";
+            button1.innerHTML="Có";
+            button2.innerHTML="Không";
+            button1.style.backgroundColor="rgb(36, 169, 213)";
+            button2.style.backgroundColor="rgb(11, 137, 49)";
+            document.getElementById('5').onclick=Thaydoi;
+            document.getElementById('4').onclick=Ham1;
+        }
+        if(click==5)
+        {
+            img.src="./img/8.jpg";
+            button2.innerHTML="Có";
+            button2.style.backgroundColor="rgb(36, 169, 213)";
+            document.getElementById('5').onclick=Ham1;
+            button1.style.display="none";
+        }
+    }
+</script>
+</html>
